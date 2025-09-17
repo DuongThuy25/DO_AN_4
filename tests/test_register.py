@@ -15,9 +15,7 @@ all_results = []
 def test_register(driver, index, username, email, password, sdt, expected_result):
     register_page = RegisterPage(driver)
     register_page.open("http://127.0.0.1:5500/log%20in/register.html")
-
     register_page.register(username, email, password, sdt)
-
     test_name = f"test_register_{index}"
     screenshot_path = ""
     actual_result = ""

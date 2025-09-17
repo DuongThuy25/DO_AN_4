@@ -31,34 +31,27 @@ class SearchPage:
         time.sleep(1)
 
     def get_all_products_across_pages(self, keyword):
-        """Thu thập sản phẩm hiển thị chứa keyword qua tất cả các trang (nếu có)."""
+
         all_products = []
         visited_pages = set()
-
         while True:
             WebDriverWait(self.driver, 5).until(
                 EC.presence_of_all_elements_located(self.product_name_elems)
             )
-
             visibles = [
                 el.text.strip()
                 for el in self.driver.find_elements(*self.product_name_elems)
                 if el.is_displayed()
             ]
-
             matched = [
                 name for name in visibles
                 if keyword.casefold() in name.casefold()
             ]
-
             if not all_products and not matched:
                 return []
-
             for name in matched:
                 if name not in all_products:
                     all_products.append(name)
-
-            # Kiểm tra có trang kế tiếp không
             next_page = None
             for link in self.driver.find_elements(*self.pagination_links):
                 page_num = link.text.strip()
@@ -66,11 +59,8 @@ class SearchPage:
                     visited_pages.add(page_num)
                     next_page = link
                     break
-
             if not next_page:
                 break
-
             self.driver.execute_script("arguments[0].click();", next_page)
             time.sleep(1)
-
         return all_products

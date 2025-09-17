@@ -6,15 +6,21 @@ from selenium.webdriver.support import expected_conditions as EC
 from queries.add_cart_queries import get_user_id_by_username, clear_cart_by_user_id
 
 class UpdateCartPage:
+
+    CART_ROWS = (By.CSS_SELECTOR, ".cart-item-row")
+    ITEM_TOTAL = (By.CSS_SELECTOR, ".total-price")
+    QTY_INPUT = (By.CSS_SELECTOR, "input.quantity")
+    BTN_INCREASE = (By.CSS_SELECTOR, ".increase")
+    BTN_DECREASE = (By.CSS_SELECTOR, ".decrease")
+
+    CART_PAGE_URL = "/cart/cart.html"
+
     def __init__(self, driver, base_url, username="dương thuỳ"):
         self.driver = driver
         self.base_url = base_url
         self.wait = WebDriverWait(driver, 10)
         self.user_id = get_user_id_by_username(username)
 
-    CART_PAGE_URL = "/cart/cart.html"
-    CART_ROWS = (By.CSS_SELECTOR, ".cart-item-row")
-    ITEM_TOTAL = (By.CSS_SELECTOR, ".total-price")
 
     def go_to_cart_page(self):
         self.driver.get(f"{self.base_url}{self.CART_PAGE_URL}")
@@ -36,20 +42,15 @@ class UpdateCartPage:
         return None
 
     def get_quantity(self, row):
-        qty_input = row.find_element(By.CSS_SELECTOR, "input.quantity")
+        qty_input = row.find_element(*self.QTY_INPUT)
         return int(qty_input.get_attribute("value"))
 
     def get_item_total_from_ui(self, row):
-        total_elem = row.find_element(By.CSS_SELECTOR, ".total-price")
-        # Lấy từ text, không lấy attribute
+        total_elem = row.find_element(*self.ITEM_TOTAL)
         total_text = total_elem.text.strip()       # ví dụ "340.000₫"
-        total = int(total_text.replace(".", "").replace("₫", ""))
-        return total
-
-
+        return int(total_text.replace(".", "").replace("₫", ""))
 
     def get_unit_price(self, row):
-        """Tính giá 1 sản phẩm = total / quantity"""
         qty = self.get_quantity(row)
         if qty == 0:
             return 0
@@ -62,26 +63,22 @@ class UpdateCartPage:
             if current == target_qty:
                 return True
             elif current < target_qty:
-                row.find_element(By.CSS_SELECTOR, ".increase").click()
+                row.find_element(*self.BTN_INCREASE).click()
             else:
-                row.find_element(By.CSS_SELECTOR, ".decrease").click()
-            # chờ input quantity update
+                row.find_element(*self.BTN_DECREASE).click()
+
             WebDriverWait(self.driver, 5).until(
-                lambda d: int(row.find_element(By.CSS_SELECTOR, "input.quantity").get_attribute("value")) != current
+                lambda d: int(row.find_element(*self.QTY_INPUT).get_attribute("value")) != current
             )
             time.sleep(0.2)
         return False
 
     def set_quantity_and_enter(self, row, target_qty):
-        """
-        Gõ số lượng trực tiếp vào ô input và nhấn Enter
-        """
-        qty_input = row.find_element(By.CSS_SELECTOR, "input.quantity")
+        qty_input = row.find_element(*self.QTY_INPUT)
         qty_input.clear()
         qty_input.send_keys(str(target_qty))
         qty_input.send_keys(Keys.ENTER)
 
-        # Chờ UI cập nhật total
         WebDriverWait(self.driver, 3).until(
             lambda d: self.get_quantity(row) == target_qty
         )

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/project_demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Data_Add_Cart.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Data_Login.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Data_Order.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Data_Register.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Data_Search.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/delete_product_report.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/Cà phê sữa đá_delete_bug.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_login_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_update_cart_dương thuỳ_Cà phê đen đá_edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/test_results.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/test_results_add_cart.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/test_results_order.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/test_results_register.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/test_results_search.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/report/test_results_update_cart.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Data_Update_Cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Data_Update_Cart.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/add_cart_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/add_cart_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/delete_product_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/delete_product_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/update_cart_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/update_cart_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_add_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_update_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_update_cart.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="32oxL1eCtv4VBhYULlFbhxs9AwR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-8753aad8314d-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="" />
+      <created>1758100669893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758100669893</updated>
+    </task>
+    <servers />
+  </component>
+</project>

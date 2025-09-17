@@ -12,14 +12,11 @@ from queries.search_queries import query_products_by_keyword
 from utils.data_reader import read_csv_data
 from utils.test_result_writer_excel import write_test_results_excel
 
-# Đọc dữ liệu từ CSV
 raw = read_csv_data("data/Data_Search.csv")
 test_data = [
     (i + 1, row[0].strip() if row and row[0] else "")
     for i, row in enumerate(raw)
 ]
-
-
 all_results = []
 
 def normalize(lst):
@@ -33,7 +30,6 @@ def test_search(index, keyword, driver):
     db_raw = []
     ui_raw = []
 
-    # Đăng nhập
     lp = LoginPage(driver)
     lp.open("http://127.0.0.1:5500/log%20in/log%20in.html")
     lp.login("dương thuỳ", "123")
@@ -43,12 +39,10 @@ def test_search(index, keyword, driver):
     except TimeoutException:
         pass
 
-    # Chuyển sang trang Sản phẩm
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.LINK_TEXT, "Sản phẩm"))
     ).click()
 
-    # Truy vấn DB
     try:
         db_raw = query_products_by_keyword(keyword)
         db_clean = normalize(db_raw)
@@ -58,11 +52,10 @@ def test_search(index, keyword, driver):
         _record_result(test_name, keyword, db_raw, ui_raw, status, screenshot)
         pytest.fail(f"[{test_name}] Lỗi truy vấn DB: {e}")
 
-    # Lấy kết quả từ UI
     try:
         sp = SearchPage(driver)
         sp.enter_search_keyword(keyword)
-        ui_raw = sp.get_all_products_across_pages(keyword)  # ✅ truyền keyword vào đây
+        ui_raw = sp.get_all_products_across_pages(keyword)
         ui_clean = normalize(ui_raw)
     except Exception as e:
         status = "FAIL"
@@ -70,7 +63,6 @@ def test_search(index, keyword, driver):
         _record_result(test_name, keyword, db_raw, ui_raw, status, screenshot)
         pytest.fail(f"[{test_name}] Lỗi lấy dữ liệu UI: {e}")
 
-    # So sánh kết quả
     if ui_clean != db_clean:
         status = "FAIL"
         screenshot = _capture(driver, test_name)

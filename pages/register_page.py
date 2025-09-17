@@ -33,7 +33,7 @@ class RegisterPage:
         try:
             alert = self.driver.switch_to.alert
             alert_text = alert.text
-            alert.accept()  # đóng alert
+            alert.accept()
             return alert_text
         except:
-            return ""  # Trường hợp không có alert
+            return ""

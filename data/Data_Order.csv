@@ -1,0 +1,6 @@
+﻿test_id,username,password,product_name,quantities,address,expected_note
+TC_CO_01,dương thuỳ,123,Cà phê sữa đá,1,"123 Nguyễn Trãi, Hà Nội",Thanh toán thành công !!!
+TC_CO_02,dương thuỳ 1,123456,Cà phê sữa đá|Cà phê muối,2|1,"12 Lê Lợi, TP HCM",Thanh toán thành công !!!
+TC_CO_03,dương thuỳ,123,Cà phê phin|Cà phê sữa đá,3|2,,Địa chỉ giao hàng không được để trống.
+TC_CO_04,dương thuỳ,123,Cà phê trứng,1,@hai phòng,Địa chỉ sai vui lòng kiểm tra lại!
+TC_CO_05,dương thuỳ,123,Cà phê trứng,1,1234,Địa chỉ sai vui lòng kiểm tra lại!

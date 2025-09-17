@@ -6,7 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class DeleteCartPage:
     CART_ROWS = (By.CSS_SELECTOR, ".cart-item-row")
-
+    delete_btn = row.find_element(By.CSS_SELECTOR, "button.delete-btn")
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 5)
@@ -23,7 +23,7 @@ class DeleteCartPage:
         return None
 
     def click_delete_button(self, row):
-        delete_btn = row.find_element(By.CSS_SELECTOR, "button.delete-btn")
+
         self.driver.execute_script("arguments[0].scrollIntoView(true);", delete_btn)
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button.delete-btn")))
         try:

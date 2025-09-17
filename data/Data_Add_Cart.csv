@@ -1,0 +1,5 @@
+﻿Username,Password,UserID,ProductNames,Quantities,ExpectedTotal
+dương thuỳ,123,6,Cà phê cốt dừa,1,35000
+dương thuỳ 1,123456,12,Cà phê sữa đá|Cà phê muối,1|2,410000
+user1,123456,109,Cà phê trứng|Cà phê đen đá,1|1,385000
+user2,123456,110,Cà phê đen đá|Cà phê sữa đá|Cà phê muối,1|2|1,740000
