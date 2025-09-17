@@ -4,53 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project_demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Data_Add_Cart.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Data_Login.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Data_Order.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Data_Register.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Data_Search.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/delete_product_report.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/Cà phê sữa đá_delete_bug.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_login_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_register_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/screenshots/test_update_cart_dương thuỳ_Cà phê đen đá_edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/test_results.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/test_results_add_cart.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/test_results_order.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/test_results_register.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/test_results_search.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/report/test_results_update_cart.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Data_Update_Cart.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Data_Update_Cart.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/add_cart_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/add_cart_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/delete_product_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/delete_product_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/register_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/register_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/search_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/update_cart_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/update_cart_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_add_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_register.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_update_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_update_cart.py" afterDir="false" />
-    </list>
+    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="add file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +25,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "git-widget-placeholder": "master"
   }
 }]]></component>
@@ -89,6 +44,19 @@
       <option name="presentableId" value="Default" />
       <updated>1758100669893</updated>
     </task>
+    <task id="LOCAL-00001" summary="add file">
+      <option name="closed" value="true" />
+      <created>1758127487582</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758127487582</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file" />
   </component>
 </project>
