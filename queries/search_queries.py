@@ -1,3 +1,4 @@
+
 from utils.db_connection import get_db_connection
 
 def query_products_by_keyword(keyword=None):

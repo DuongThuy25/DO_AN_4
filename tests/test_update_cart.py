@@ -1,43 +1,44 @@
 import os
-import csv
 import pytest
-import time
+import openpyxl
 from datetime import datetime
-from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 from pages.login_page import LoginPage
 from pages.add_cart_page import AddCartPage
 from pages.update_cart_page import UpdateCartPage
-from utils.test_result_writer_excel import write_test_results_excel
+from utils.data_reader import read_excel_data
+from utils.screenshot_helper import ScreenshotHelper
+from utils.custom_reporter import CustomReporter
 
 BASE_URL = "http://127.0.0.1:5500"
-DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "Data_Update_Cart.csv")
+DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "Data_UpdateCart.xlsx")
+raw_data = read_excel_data(DATA_FILE)
 
-all_results = []
+def safe_str(val):
+    return str(val).strip() if val is not None else ""
 
-def read_csv():
-    with open(DATA_FILE, "r", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+test_data = []
+for row in raw_data:
+    test_data.append((
+        safe_str(row["username"]),
+        safe_str(row["password"]),
+        safe_str(row["product_name"]),
+        int(row["initial_quantity"] or 0),
+        safe_str(row["update_action"]),
+        int(row["expected_quantity"] or 0),
+        int(row["expected_total"] or 0)
+    ))
 
-@pytest.mark.parametrize("data", read_csv())
-def test_update_cart(data):
-    driver = webdriver.Chrome()
-    wait = WebDriverWait(driver, 10)
+reporter = CustomReporter("Update_Cart")
 
-    username       = data["username"].strip()
-    password       = data["password"].strip()
-    product_name   = data["product_name"].strip()
-    initial_qty    = int(data["initial_quantity"])
-    update_action  = data["update_action"].strip()
-    expected_qty   = int(data["expected_quantity"])
-    expected_total = int(data["expected_total"])
-
+@pytest.mark.parametrize("username,password,product_name,initial_qty,update_action,expected_qty,expected_total", test_data)
+def test_update_cart(username, password, product_name, initial_qty, update_action, expected_qty, expected_total, driver):
     test_name = f"test_update_cart_{username}_{product_name}_{update_action}"
     status = "PASS"
-    screenshot = ""
+    screenshot_path = ""
     ui_total = None
 
     try:
@@ -45,26 +46,21 @@ def test_update_cart(data):
         login_page.open(f"{BASE_URL}/log%20in/log%20in.html")
         login_page.login(username, password)
         try:
-            wait.until(EC.alert_is_present()).accept()
+            WebDriverWait(driver, 5).until(EC.alert_is_present()).accept()
         except TimeoutException:
             pass
 
-
         cart_page = UpdateCartPage(driver, BASE_URL, username=username)
         cart_page.clear_cart()
-
 
         add_page = AddCartPage(driver, BASE_URL)
         add_page.go_to_product_page()
         add_page.go_to_product_detail(product_name)
         add_page.add_to_cart(initial_qty)
 
-
         cart_page.go_to_cart_page()
-        time.sleep(0.3)
         row = cart_page.find_product_row(product_name)
         assert row is not None, f"Không tìm thấy {product_name} trong giỏ!"
-
 
         if update_action == "+" or update_action == "-":
             ok = cart_page.click_until_quantity(row, expected_qty)
@@ -74,47 +70,37 @@ def test_update_cart(data):
         else:
             raise ValueError(f"Unknown update_action: {update_action}")
 
-
         ui_total = cart_page.get_item_total_from_ui(row)
-        print(f"[DEBUG] qty={cart_page.get_quantity(row)}, UI total={ui_total}, expected_total={expected_total}")
         assert ui_total == expected_total, f"Sai tổng tiền - expected {expected_total}, got {ui_total}"
 
     except Exception as e:
         status = "FAIL"
-        screenshot = _capture(driver, test_name)
-        _record_result(test_name, data, expected_total, ui_total, status, screenshot)
-        pytest.fail(f"[{test_name}] Error: {e}")
+        screenshot_path = ScreenshotHelper.capture(driver, test_name, folder=reporter.screenshot_dir)
+        _record_result(test_name, username, product_name, update_action, initial_qty, expected_qty, expected_total, ui_total, status, screenshot_path)
+        pytest.fail(f"[{test_name}] Lỗi: {e}")
 
     else:
-        _record_result(test_name, data, expected_total, ui_total, status, screenshot)
-    finally:
-        driver.quit()
+        _record_result(test_name, username, product_name, update_action, initial_qty, expected_qty, expected_total, ui_total, status, screenshot_path)
 
 
-def _capture(driver, name):
-    path = f"report/screenshots/{name}.png"
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    driver.save_screenshot(path)
-    return path
-
-def _record_result(test_name, data, expected_total, actual_total, status, screenshot_path):
-    all_results.append({
-        "Time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "Test Case": test_name,
-        "Username": data["username"],
-        "Product": data["product_name"],
-        "Action": data["update_action"],
-        "Initial Qty": data["initial_quantity"],
-        "Expected Qty": data["expected_quantity"],
-        "Expected Total (CSV)": expected_total,
-        "Actual Total (UI)": actual_total if actual_total is not None else "",
-        "Status": status,
-        "Screenshot": screenshot_path if status == "FAIL" else ""
-    })
+def _record_result(test_name, username, product_name, action, initial_qty, expected_qty, expected_total, actual_total, status, screenshot_path):
+    extra_info = {
+        "Product": product_name,
+        "Action": action,
+        "Initial Qty": initial_qty,
+        "Expected Qty": expected_qty,
+        "Expected Total": expected_total,
+        "Actual Total": actual_total if actual_total is not None else ""
+    }
+    reporter.log_result(
+        test_name=test_name,
+        inputs_dict=username,
+        expected=f"Tổng tiền: {expected_total}",
+        actual=f"Tổng tiền: {actual_total}",
+        status=status,
+        screenshot_path=screenshot_path,
+        extra_fields=extra_info
+    )
 
 def teardown_module(module):
-    write_test_results_excel(
-        all_results,
-        filename="test_results_update_cart.xlsx",
-        sheet_name="Update Cart Results"
-    )
+    reporter.save_excel_report()

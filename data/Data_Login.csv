@@ -1,8 +1,0 @@
-﻿Username,Password,ExpectedResult
-dương thuỳ,123,Login successful.
-dương thuỳ,1234,Invalid username or password.
-,,Invalid username or password.
-dương thuỳ,,Invalid username or password.
-dương thuỳ,12345,Password must be at least 6 characters.
-,123,Invalid username or password.
-thuỳ,123,Invalid username or password.

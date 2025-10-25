@@ -4,18 +4,99 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="add file" />
+    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="add file">
+      <change afterPath="$PROJECT_DIR$/utils/custom_reporter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/screenshot_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Data_Login.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Data_Update_Cart.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/delete_product_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/delete_product_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/queries/search_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/queries/search_queries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/delete_product_report.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/Cà phê sữa đá_delete_bug.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_login_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_update_cart_dương thuỳ_Cà phê đen đá_edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/test_results.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/test_results_add_cart.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/test_results_order.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/test_results_register.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/test_results_search.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/report/test_results_update_cart.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_add_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_dt_product_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_dt_product_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_register.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_update_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_update_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_reader.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DuongThuy25&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DuongThuy25/DO_AN_4.git&quot;,
+    &quot;accountId&quot;: &quot;c70ec1e9-ffbd-4952-ae7b-6c640d539bf2&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/conftest.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/data/Data_Register.csv" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/data/Data_Search.csv" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/data/Data_Update_Cart.csv" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pages/add_cart_page.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pages/delete_product_cart.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pages/login_page.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pages/search_page.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pages/update_cart_page.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/project_demo.iml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/queries/add_cart_queries.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/queries/order_queries.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/queries/search_queries.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/tests/test_add_cart.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/tests/test_dt_product_cart.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/tests/test_login.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/tests/test_register.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/tests/test_search.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/tests/test_update_cart.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/utils/data_reader.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/utils/db_connection.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/utils/test_result_writer_excel.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="32oxL1eCtv4VBhYULlFbhxs9AwR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,11 +105,110 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for tests.test_add_cart.test_add_cart.executor": "Run",
+    "Python tests.Python tests for tests.test_dt_product_cart.test_delete_product.executor": "Run",
+    "Python tests.Python tests for tests.test_login.test_login.executor": "Run",
+    "Python tests.Python tests for tests.test_register.test_register.executor": "Run",
+    "Python tests.Python tests in test_dt_product_cart.py.executor": "Run",
+    "Python tests.Python tests in test_login.py.executor": "Run",
+    "Python tests.Python tests in test_order.py.executor": "Run",
+    "Python tests.Python tests in test_search.py.executor": "Run",
+    "Python tests.Python tests in test_update_cart.py.executor": "Run",
+    "Python.test_login.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "master"
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_register.test_register">
+    <configuration name="Python tests for tests.test_dt_product_cart.test_delete_product" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="project_demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_dt_product_cart.test_delete_product&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_register.test_register" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="project_demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_register.test_register&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_dt_product_cart.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="project_demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_dt_product_cart.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_login.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="project_demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_login.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_order.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="project_demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_order.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for tests.test_register.test_register" />
+        <item itemvalue="Python tests.Python tests in test_login.py" />
+        <item itemvalue="Python tests.Python tests in test_order.py" />
+        <item itemvalue="Python tests.Python tests in test_dt_product_cart.py" />
+        <item itemvalue="Python tests.Python tests for tests.test_dt_product_cart.test_delete_product" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -36,6 +216,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="" />
@@ -52,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758127487582</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add file">
+      <option name="closed" value="true" />
+      <created>1758127616416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758127616416</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

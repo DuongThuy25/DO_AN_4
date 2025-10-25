@@ -1,4 +1,4 @@
-import os, csv, unicodedata, time, pytest, pandas as pd
+import os, csv, unicodedata, time, pytest
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,25 +10,26 @@ from pages.order_page import OrderPage
 from pages.add_cart_page import AddCartPage
 from queries.add_cart_queries import get_user_id_by_username
 from queries.order_queries import get_user_info_by_id, get_order_details_by_order_id, get_latest_order_from_db
+from utils.custom_reporter import CustomReporter
+from utils.screenshot_helper import ScreenshotHelper
 
 BASE_URL = "http://127.0.0.1:5500"
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "Data_Order.csv")
-REPORT_FILE = "report/test_results_order.xlsx"
-all_results = []
+
+# Reporter cho Order
+reporter = CustomReporter("Order")
 
 def read_csv():
-    with open(DATA_FILE, "r", encoding="utf-8-sig") as f:  # dùng utf-8-sig để tự bỏ BOM
+    with open(DATA_FILE, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         rows = []
         for r in reader:
             clean_row = {}
             for k, v in r.items():
-                if k:  # chỉ xử lý khi header có tên
-                    clean_key = k.strip().lower()
-                    clean_row[clean_key] = v
+                if k:
+                    clean_row[k.strip().lower()] = v
             rows.append(clean_row)
         return rows
-
 
 def parse_row(row):
     test_id = row.get("test_id", "").strip()
@@ -36,13 +37,10 @@ def parse_row(row):
     password = row.get("password", "").strip()
     address = row.get("address", "").strip()
     expected_note = row.get("expected_note", "").strip()
-
     product_names = [p.strip() for p in row.get("product_name","").split("|")] if row.get("product_name") else []
     quantities = [int(q.strip()) for q in row.get("quantities","").split("|")] if row.get("quantities") else []
     products = list(zip(product_names, quantities))
-
     return test_id, username, password, products, address, expected_note
-
 
 test_data = [parse_row(r) for r in read_csv()]
 
@@ -55,9 +53,12 @@ def norm(s: str) -> str:
 def test_order_flow(test_id, username, password, products, address, expected_note):
     driver = webdriver.Chrome()
     wait = WebDriverWait(driver, 10)
-    status, error_message, screenshot_path = "PASSED", "", ""
+    status = "PASSED"
+    error_message = ""
+    screenshot_path = ""
     start_time = datetime.now()
-    addr_validation_msg, order_msg = "", ""
+    addr_validation_msg = ""
+    order_msg = ""
 
     try:
         # login
@@ -98,7 +99,7 @@ def test_order_flow(test_id, username, password, products, address, expected_not
             addr_validation_msg = order_page.get_address_error_message().strip()
             if expected_note: assert norm(addr_validation_msg) == norm(expected_note)
             else: assert addr_validation_msg != ""
-            _record_result(test_id, username, products, address, "PASSED", "", "", start_time, addr_validation_msg, order_msg, expected_note)
+            status = "PASSED"
             return
 
         # đặt hàng
@@ -106,7 +107,7 @@ def test_order_flow(test_id, username, password, products, address, expected_not
         order_msg = order_page.get_toast_message().strip()
         assert norm(order_msg) == norm(expected_note)
 
-        # so sánh đơn mới nhất UI ↔ DB
+        # so sánh UI ↔ DB
         STATUS_MAP = {
             "pending": "chưa hoàn thành",
             "completed": "hoàn thành",
@@ -124,7 +125,7 @@ def test_order_flow(test_id, username, password, products, address, expected_not
         ui_status = ui_order["status"].strip().lower()
         assert ui_status == expected_ui_status, f"Status mismatch: UI='{ui_status}', DB='{db_status}'"
 
-        # so sánh tổng tiền
+        # tổng tiền
         def normalize_amount(val: str) -> int:
             digits = "".join(ch for ch in val if ch.isdigit())
             return int(digits) if digits else 0
@@ -134,39 +135,23 @@ def test_order_flow(test_id, username, password, products, address, expected_not
         assert ui_amount == db_amount, f"Total mismatch: UI='{ui_order['total_amount']}', DB='{db_order['total_amount']}'"
 
     except Exception as e:
-        status, error_message = "FAILED", str(e)
-        screenshot_path = _capture(driver, f"order_{test_id}")
-        _record_result(test_id, username, products, address, status, error_message, screenshot_path, start_time, addr_validation_msg, order_msg, expected_note)
+        status = "FAILED"
+        error_message = str(e)
+        screenshot_path = ScreenshotHelper.capture(driver, f"order_{test_id}", folder=reporter.screenshot_dir)
         pytest.fail(f"[{test_id}] Error: {e}")
-    else:
-        _record_result(test_id, username, products, address, "PASSED", "", "", start_time, addr_validation_msg, order_msg, expected_note)
     finally:
+        # ghi báo cáo giống UpdateCart/Delete
+        reporter.log_result(
+            test_name=f"order_{test_id}",
+            inputs_dict=username,
+            expected=expected_note,
+            actual=addr_validation_msg or order_msg or error_message,
+            status=status,
+            screenshot_path=screenshot_path,
+            extra_fields={
+                "Products": str(products),
+                "Address": address
+            }
+        )
         driver.quit()
-
-def _capture(driver, name):
-    path = f"report/screenshots/{name}.png"
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    try: driver.save_screenshot(path)
-    except: pass
-    return path
-
-def _record_result(test_id, username, products, address, status, error_message, screenshot_path, start_time, addr_validation_msg="", order_msg="", expected_note=""):
-    actual_note = addr_validation_msg if addr_validation_msg else order_msg
-
-    all_results.append({
-        "StartTime": start_time.strftime("%Y-%m-%d %H:%M:%S"),
-        "TestID": test_id,
-        "Username": username,
-        "Products": str(products),
-        "Address": address,
-        "ActualNote": actual_note,
-        "ExpectedNote": expected_note,
-        "Status": status,
-        "ErrorMessage": error_message,
-        "Screenshot": screenshot_path if status=="FAILED" else ""
-    })
-
-def teardown_module(module):
-    os.makedirs(os.path.dirname(REPORT_FILE), exist_ok=True)
-    df = pd.DataFrame(all_results)
-    df.to_excel(REPORT_FILE, index=False)
+        reporter.save_excel_report()
