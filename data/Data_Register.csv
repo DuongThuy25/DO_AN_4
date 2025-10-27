@@ -1,8 +1,8 @@
 ﻿Username,Email,Password,SDT,ExpectedResult
-user1,user1@gmail.com,123456,12738455,User registered successfully.
+user1,user1@gmail.com,123456,012738455,User registered successfully.
 user2,user2@gmail.com,123456,,"Please fill in the ""SDT"" field."
-user3,user3@gmail.com,,132274582,"Please fill in the ""Password"" field."
-user4,,123456,132274583,"Please fill in the ""Email"" field."
-,user4@gmail.com,123456,12738459,"Please fill in the ""Username"" field."
-user5,user5gmail.com,123456,12738461,"The email field is missing the ""@"" symbol. Please check again."
-user6,user6@gmail.com,123456,127,The phone number must contain exactly 10 digits.
+user3,user3@gmail.com,,0132274582,"Please fill in the ""Password"" field."
+user4,,123456,0132274583,"Please fill in the ""Email"" field."
+,user4@gmail.com,123456,012738459,"Please fill in the ""Username"" field."
+user5,user5gmail.com,123456,012738461,"The email field is missing the ""@"" symbol. Please check again."
+user6,user6@gmail.com,123456,0127,The phone number must contain exactly 10 digits.

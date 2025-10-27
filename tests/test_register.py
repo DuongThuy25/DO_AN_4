@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, UnexpectedAlertPresentException
 
 from pages.register_page import RegisterPage
-from utils.data_reader import read_excel_data
+from utils.data_reader import read_excel_data, read_csv_data
 from utils.screenshot_helper import ScreenshotHelper
 from utils.custom_reporter import CustomReporter
 

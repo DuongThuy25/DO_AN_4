@@ -4,44 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="add file">
-      <change afterPath="$PROJECT_DIR$/utils/custom_reporter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/screenshot_helper.py" afterDir="false" />
+    <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Data_Login.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Data_Update_Cart.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/delete_product_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/delete_product_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queries/search_queries.py" beforeDir="false" afterPath="$PROJECT_DIR$/queries/search_queries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/delete_product_report.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/Cà phê sữa đá_delete_bug.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/order_TC_CO_05.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_login_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_register_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/screenshots/test_update_cart_dương thuỳ_Cà phê đen đá_edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/test_results.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/test_results_add_cart.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/test_results_order.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/test_results_register.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/test_results_search.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/report/test_results_update_cart.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_add_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_add_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_dt_product_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_dt_product_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Data_Register.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/Data_Register.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_register.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_register.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_update_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_update_cart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_reader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,27 +69,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for tests.test_add_cart.test_add_cart.executor": "Run",
-    "Python tests.Python tests for tests.test_dt_product_cart.test_delete_product.executor": "Run",
-    "Python tests.Python tests for tests.test_login.test_login.executor": "Run",
-    "Python tests.Python tests for tests.test_register.test_register.executor": "Run",
-    "Python tests.Python tests in test_dt_product_cart.py.executor": "Run",
-    "Python tests.Python tests in test_login.py.executor": "Run",
-    "Python tests.Python tests in test_order.py.executor": "Run",
-    "Python tests.Python tests in test_search.py.executor": "Run",
-    "Python tests.Python tests in test_update_cart.py.executor": "Run",
-    "Python.test_login.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for tests.test_add_cart.test_add_cart.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_dt_product_cart.test_delete_product.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_login.test_login.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_register.test_register.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_dt_product_cart.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_login.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_order.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_search.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_update_cart.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_login.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python tests.Python tests for tests.test_register.test_register">
     <configuration name="Python tests for tests.test_dt_product_cart.test_delete_product" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="project_demo" />
@@ -241,11 +208,20 @@
       <option name="project" value="LOCAL" />
       <updated>1758127616416</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="final">
+      <option name="closed" value="true" />
+      <created>1761368653229</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761368653229</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add file" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>
