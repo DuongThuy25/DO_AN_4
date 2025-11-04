@@ -1,0 +1,58 @@
+name: Run Selenium Tests (CI/CD)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+
+      - name: Run Pytest
+        run: |
+          pytest --disable-warnings -v
+        continue-on-error: false
+
+
+      - name: Convert Excel report to HTML
+        run: |
+          pip install pandas openpyxl
+          python - <<EOF
+          import pandas as pd
+          import glob, os
+          files = glob.glob("reports/*.xlsx")
+          for f in files:
+              df = pd.read_excel(f)
+              html_file = f.replace(".xlsx", ".html")
+              df.to_html(html_file, index=False)
+          EOF
+
+
+      - name: Upload test results and screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            reports/**/*.xlsx
+            reports/**/*.html
+            screenshots/
