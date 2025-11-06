@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.13'
 
       - name: Install dependencies
         run: |
@@ -27,26 +27,30 @@ jobs:
       - name: Run Pytest
         run: |
           pytest --disable-warnings -v
-        continue-on-error: false
 
-      - name: Convert Excel report to HTML
+      - name: Convert Excel reports to HTML
         run: |
           pip install pandas openpyxl
           python - <<EOF
           import pandas as pd
           import glob, os
-          files = glob.glob("reports/*.xlsx")
+
+          # Đọc tất cả file Excel trong thư mục reports/screenshots
+          files = glob.glob("reports/screenshots/*.xlsx")
+          os.makedirs("reports/html_reports", exist_ok=True)
+
           for f in files:
               df = pd.read_excel(f)
-              html_file = f.replace(".xlsx", ".html")
+              html_file = os.path.join("reports/html_reports", os.path.basename(f).replace(".xlsx", ".html"))
               df.to_html(html_file, index=False)
+              print(f"✅ Converted {f} → {html_file}")
           EOF
 
       - name: Upload test results and screenshots
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: test-artifacts
           path: |
-            reports/**/*.xlsx
-            reports/**/*.html
-            screenshots/
+            reports/screenshots/*.xlsx
+            reports/html_reports/*.html
+            reports/screenshots/*.png
