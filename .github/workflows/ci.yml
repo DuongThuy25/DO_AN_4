@@ -27,7 +27,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y wget gnupg
           wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
+            | sudo tee /etc/apt/sources.list.d/google.list
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
@@ -35,12 +36,21 @@ jobs:
       - name: Install ChromeDriver
         uses: nanasess/setup-chromedriver@v2
 
-      # 5. Cài SQL ODBC driver + pip
+      # 5. Cài ODBC SQL Server driver (CHẤC CHẮN CHẠY)
       - name: Install ODBC dependencies
         run: |
           sudo apt-get update
-          sudo ACCEPT_EULA=Y apt-get install -y unixodbc-dev msodbcsql17
-          python -m pip install --upgrade pip
+
+          sudo apt-get install -y curl gnupg
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list \
+            | sudo tee /etc/apt/sources.list.d/mssql-release.list
+
+          sudo apt-get update
+
+          sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18 mssql-tools18 unixodbc-dev
+          echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
+          source ~/.bashrc
 
       # 6. Install Python dependencies
       - name: Install Python dependencies
@@ -52,16 +62,18 @@ jobs:
           mkdir -p reports
           mkdir -p screenshots
 
-      # 8. Chạy Pytest (project của bạn tự sinh Excel report)
+      # 8. Chạy Pytest
       - name: Run Pytest
         run: pytest --disable-warnings -v
 
-      # 9. Convert Excel reports → HTML
+      # 9. Convert Excel -> HTML
       - name: Convert Excel report to HTML
         run: |
           pip install pandas openpyxl
-          python - <<EOF
-          import pandas as pd, glob, os
+          python << 'EOF'
+          import pandas as pd
+          import glob
+          import os
 
           os.makedirs("reports", exist_ok=True)
 
@@ -76,12 +88,12 @@ jobs:
                   print("Converted:", f, "->", html_file)
           EOF
 
-      # 10. Upload artifacts (Excel + HTML + screenshots)
+      # 10. Upload artifacts
       - name: Upload test results and screenshots
         uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: |
-            reports/**/*.xlsx
-            reports/**/*.html
+            reports/*.xlsx
+            reports/*.html
             screenshots/
