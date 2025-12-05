@@ -4,3 +4,4 @@ pandas
 openpyxl
 pytest-html
 pytest-xdist
+pyodbc
