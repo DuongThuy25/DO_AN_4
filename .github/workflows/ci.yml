@@ -11,46 +11,77 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Lấy source code
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Setup Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: '3.11'
 
-      - name: Install dependencies
+      # 3. Cài Google Chrome
+      - name: Install Chrome
         run: |
+          sudo apt-get update
+          sudo apt-get install -y wget gnupg
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      # 4. Cài ChromeDriver
+      - name: Install ChromeDriver
+        uses: nanasess/setup-chromedriver@v2
+
+      # 5. Cài SQL ODBC driver + pip
+      - name: Install ODBC dependencies
+        run: |
+          sudo apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y unixodbc-dev msodbcsql17
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
 
-      - name: Run Pytest
+      # 6. Install Python dependencies
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # 7. Tạo thư mục cần thiết
+      - name: Create reports and screenshots folders
         run: |
-          pytest --disable-warnings -v
+          mkdir -p reports
+          mkdir -p screenshots
 
-      - name: Convert Excel reports to HTML
+      # 8. Chạy Pytest (project của bạn tự sinh Excel report)
+      - name: Run Pytest
+        run: pytest --disable-warnings -v
+
+      # 9. Convert Excel reports → HTML
+      - name: Convert Excel report to HTML
         run: |
           pip install pandas openpyxl
           python - <<EOF
-          import pandas as pd
-          import glob, os
+          import pandas as pd, glob, os
 
-          # Đọc tất cả file Excel trong thư mục reports/screenshots
-          files = glob.glob("reports/screenshots/*.xlsx")
-          os.makedirs("reports/html_reports", exist_ok=True)
+          os.makedirs("reports", exist_ok=True)
 
-          for f in files:
-              df = pd.read_excel(f)
-              html_file = os.path.join("reports/html_reports", os.path.basename(f).replace(".xlsx", ".html"))
-              df.to_html(html_file, index=False)
-              print(f"✅ Converted {f} → {html_file}")
+          files = glob.glob("reports/*.xlsx")
+          if not files:
+              print("⚠ No Excel reports found!")
+          else:
+              for f in files:
+                  df = pd.read_excel(f)
+                  html_file = f.replace(".xlsx", ".html")
+                  df.to_html(html_file, index=False)
+                  print("Converted:", f, "->", html_file)
           EOF
 
+      # 10. Upload artifacts (Excel + HTML + screenshots)
       - name: Upload test results and screenshots
         uses: actions/upload-artifact@v4
         with:
-          name: test-artifacts
+          name: test-results
           path: |
-            reports/screenshots/*.xlsx
-            reports/html_reports/*.html
-            reports/screenshots/*.png
+            reports/**/*.xlsx
+            reports/**/*.html
+            screenshots/
