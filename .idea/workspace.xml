@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="893bb497-21bd-4df6-9bcd-a3e945ca32fc" name="Changes" comment="final">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Data_UpdateCart.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/Data_UpdateCart.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test_results_Add_Cart.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test_results_Add_Cart.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test_results_Delete_Product.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test_results_Delete_Product.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test_results_Login.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test_results_Login.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test_results_Order.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test_results_Order.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test_results_Register.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test_results_Register.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test_results_Search.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test_results_Search.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +80,14 @@
     &quot;Python tests.Python tests for tests.test_dt_product_cart.test_delete_product.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for tests.test_login.test_login.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for tests.test_register.test_register.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_update_cart.test_update_cart.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_dt_product_cart.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_login.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_order.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_register.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_search.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in test_update_cart.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.register_page.executor&quot;: &quot;Run&quot;,
     &quot;Python.test_login.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
@@ -87,8 +97,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.test_register.test_register">
-    <configuration name="Python tests for tests.test_dt_product_cart.test_delete_product" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests in test_order.py">
+    <configuration name="Python tests for tests.test_add_cart.test_add_cart" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="project_demo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,11 +109,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_dt_product_cart.test_delete_product&quot;" />
+      <option name="_new_target" value="&quot;tests.test_add_cart.test_add_cart&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_register.test_register" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_update_cart.test_update_cart" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="project_demo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +124,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_register.test_register&quot;" />
+      <option name="_new_target" value="&quot;tests.test_update_cart.test_update_cart&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -133,21 +143,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_login.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="project_demo" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_login.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests in test_order.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="project_demo" />
       <option name="ENV_FILES" value="" />
@@ -163,13 +158,28 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests in test_update_cart.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="project_demo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_update_cart.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.test_register.test_register" />
-        <item itemvalue="Python tests.Python tests in test_login.py" />
         <item itemvalue="Python tests.Python tests in test_order.py" />
         <item itemvalue="Python tests.Python tests in test_dt_product_cart.py" />
-        <item itemvalue="Python tests.Python tests for tests.test_dt_product_cart.test_delete_product" />
+        <item itemvalue="Python tests.Python tests in test_update_cart.py" />
+        <item itemvalue="Python tests.Python tests for tests.test_update_cart.test_update_cart" />
+        <item itemvalue="Python tests.Python tests for tests.test_add_cart.test_add_cart" />
       </list>
     </recent_temporary>
   </component>
